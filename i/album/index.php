@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Album example · Bootstrap v5.3</title>
+    <title>ร้านเดลี่เบเกอรี่</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
@@ -156,7 +156,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
-          <h4>Album</h4>
+          <h4>About</h4>
           <p class="text-body-secondary">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
@@ -174,7 +174,7 @@
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>ทิพย์นารี เพตาเสน (ตันหยง)</strong>
+        <strong>เดลี่เบเกอรี่</strong>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -188,8 +188,8 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">อร่อยตั้งแต่รับประทานครั้งแรก</h1>
-        <p class="lead text-body-secondary">อร่อยตั้งแต่ครั้งแรกที่ลิ้มลอง รสชาติกลมกล่อมลงตัวในทุกคำที่รับประทาน.</p>
+        <h1 class="fw-light">เดลี่เบเกอรี่</h1>
+        <p class="lead text-body-secondary">เบเกอรี่หอมๆพร้ิมเสิร์ฟแล้วค่า</p>
         <p>
           <a href="#" class="btn btn-primary my-2">Main call to action</a>
           <a href="#" class="btn btn-secondary my-2">Secondary action</a>
@@ -202,44 +202,45 @@
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        
-        
-<?php 
-include_once("../connectdb.php"); //เชื่อมต่อฐานข้อมูล
-
-$sql = "SELECT * FROM products ORDER BY products.p_id ASC";
-$rs = mysqli_query($conn,$sql);
-
-while ($data = mysqli_fetch_array($rs)){
-?>      
+      
+      
+      
+      
+      
+      
+       <?php
+include_once("../connectdb.php"); // เชื่อมต่อฐานข้อมูล
+	
+	$sql = "SELECT * FROM `products` ORDER BY `products`.`p_id` ASC";
+	$rs = mysqli_query($conn, $sql); 
+	
+	while ($data = mysqli_fetch_array($rs)){ 
+     ?>
+      
       
         <div class="col">
           <div class="card shadow-sm">
-              <img src="../images/<?php echo $data['p_id'];?>.<?php echo $data['p_ext'];?>">
-
+           <img src="../images/<?php echo $data['p_id'];?>.<?php echo $data['p_ext'];?>">
             <div class="card-body">
               <p class="card-text">
-			  <?php echo $data['p_name'];?> <br>
-			  <?php echo $data['p_price'];?> บาท
-              </p>
+			  <?php echo $data['p_name'];?><br>
+               <?php echo $data['p_price'];?>บาท
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                
-                  <a href="update.php?id=<?php echo $data['p_id'];?>" type="button" class="btn btn-warning">แก้ไข</button>
-                  <a href="delete.php?id=<?php echo $data['p_id'];?>&ext=<?php echo $data['p_ext'];?>" type="button" class="btn btn-danger" onClick="return confirm('ยืนยันการลบ?');">ลบ</a>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">รายละเอียด</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">หยิบลงตะกร้า</button>
                 </div>
+                <small class="text-body-secondary">9 mins</small>
               </div>
             </div>
           </div>
         </div>
-<?php } ?>
+ <?php } ?>       
         
         
         
         
         
-
-</main>
 
 <footer class="text-body-secondary py-5">
   <div class="container">
